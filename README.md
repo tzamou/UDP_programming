@@ -2,7 +2,7 @@
 網路程式設計CBD109035陳冠霖  
 
 ## How to used：
-1.__init__.py放在python 中site-packages/gym/envs裡面(替換掉原本的__init__.py)  
+1__init__.py放在python 中site-packages/gym/envs裡面(替換掉原本的__init__.py)  
 2.bouncyball也放在python 中site-packages/gym/envs裡面(新增這個資料夾)  
 
 ## How to train:
