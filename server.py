@@ -4,7 +4,7 @@ import threading
 class Server:
     def __init__(self):
         self.sck = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.sck.bind(('127.0.0.1', 5000)
+        self.sck.bind(('127.0.0.1', 5000))
         self.data = None
     def receved(self):
         while True:
