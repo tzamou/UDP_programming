@@ -26,4 +26,4 @@ pip install stable_baselines3
 pip install sb3_contrib  
 
 ## other
-只有兩個禮拜時間要寫code 拍影片 剪輯時間不太夠，程式碼可能有bug請見諒  
+只有兩個禮拜時間要寫code 拍影片 剪輯所以時間不太夠，程式碼可能有bug請見諒  
