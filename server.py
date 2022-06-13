@@ -1,5 +1,4 @@
 import socket
-import threading
 
 class Server:
     def __init__(self):
@@ -17,9 +16,6 @@ class Server:
 
 if __name__=="__main__":
     s = Server()
-    td=threading.Thread(target=s.receved)
-    td.setDaemon(True)
-    td.start()
-    while True:
-        pass
+    s.receved()
+
 
