@@ -27,3 +27,4 @@ pip install sb3_contrib
 
 ## other
 只有兩個禮拜時間要寫code 拍影片 剪輯所以時間不太夠，程式碼可能有bug請見諒  
+本來要加fuzzy的 但沒時間了 哭阿  
