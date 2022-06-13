@@ -37,7 +37,7 @@ if __name__=="__main__":
     obs = env.reset()
     mode='Manual'
     pygame.mixer.init()
-    pygame.mixer.music.load('/home/chen/PycharmProjects/pythonProject/net/bgm.mp3')
+    pygame.mixer.music.load('./bgm.mp3')
     pygame.mixer.music.play(-1)
     play=1
     while True:
