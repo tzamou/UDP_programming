@@ -1,6 +1,8 @@
 import gym
 import matplotlib.pyplot as plt
 from sb3_contrib.qrdqn import QRDQN
+from stable_baselines3.common.callbacks import CheckpointCallback
+from stable_baselines3.common.logger import configure
 
 class Algorithm:
     def __init__(self,envid="BouncyBall-v2",timesteps=1000_0000,model_name="./model/qrdqn_BouncyBallv2-n"):
@@ -18,7 +20,16 @@ class Algorithm:
             self.model = QRDQN("MlpPolicy", self.env, verbose=verbose)
         else:
             self.model = QRDQN.load(loadmodel, env=self.env)
-        self.model.learn(total_timesteps=self.timesteps, log_interval=4)
+
+        checkpoint_callback = CheckpointCallback(save_freq=200_0000, save_path='./model/check_log/',
+                                                 name_prefix='QRDQN_model')
+
+        ###
+        tmp_path = "./sb3_log/"
+        new_logger = configure(tmp_path, ["stdout", "csv"])
+        self.model.set_logger(new_logger)
+        ###
+        self.model.learn(total_timesteps=self.timesteps, log_interval=4, callback=checkpoint_callback)
         self.model.save(self.model_name)
         plt.plot(self.env.avgreward)
         plt.title('QRDQN v2-1')
@@ -41,6 +52,6 @@ class Algorithm:
                 obs = self.env.reset()
 
 if __name__=='__main__':
-    algo=Algorithm()
+    algo=Algorithm(timesteps=2000_0000,model_name="./model/qrdqn_BouncyBallv2_0614")
     algo.train()
-    algo.predict()
+    #algo.predict()
